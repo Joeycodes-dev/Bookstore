@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="./index.js"></script>
+    <script src="./cookie.js"></script>
+    <script src="./items.js"></script>
+    <script src="./products.js"></script>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" width="255px" class="logome">
+                </a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="">Faculty</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+            </nav>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+
+    </div>
+
+
+    <!--products-->
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>All Products</h2>
+            <select>
+                <option>Sort by Latest</option>
+                <option>Sort by Price</option>
+                <option>Sort by Popularity</option>
+                <option>Sort by Rating</option>
+                <option>Sort by Sale</option>
+            </select>
+        </div>
+
+        <div class="row" id="row_1">
+            <script>
+                document.querySelector("#row_1").innerHTML = list_render;
+                function _event(isbn) {
+                    cookie.set('cookie_key', isbn, 30);
+
+                    return false;
+                }
+            </script>
+
+
+
+            <!-- 
+            <div class="page-btn">
+                <button style="background: transparent;border: 0;outline: 0;" onclick="back()" ><span>&#8594;</span></a>
+                <button style="background: transparent;border: 0;outline: 0;" onclick="forward()"><span>&#8594;</span></a>
+            </div> -->
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Contact us to Sell your Books</h3>
+                    <p>Send an emaail or contacts us on 083573902</p>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo.png">
+                    <p>Our purpose is to sustainabily make the pleasure andd benefits of buying secondhand books
+                        accesible</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>University links</li>
+                        <li>Return policy</li>
+                        <li>Join Team</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <a href="">
+                            <li>Facebook</li>
+                        </a>
+                        <a href="">
+                            <li>Twitter</li>
+                        </a>
+                        <a href="">
+                            <li>Instagram</li>
+                        </a>
+                        <a href="">
+                            <li>Youtube</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright &copy; 2021 - The Unnamed Company</p>
+        </div>
+    </div>
+
+    <script>
+
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px"
+            }
+            else {
+                MenuItems.style.maxHeight = "0px"
+            }
+        }
+    </script>
+</body>
+
+</html>
